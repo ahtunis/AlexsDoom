@@ -28,7 +28,7 @@ namespace AlexsDoom.Level
 
             _musicSource = GetComponent<AudioSource>();
             _musicSource.loop = true;
-            _musicSource.volume = musicVolume;
+            _musicSource.volume = GameSettings.MusicVolume;
         }
 
         public void PlayTrack(int index)

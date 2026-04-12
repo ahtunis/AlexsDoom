@@ -11,6 +11,7 @@ namespace AlexsDoom.Level
         [SerializeField] private string firstLevelScene = "Level01";
 
         public int EnemiesKilled { get; private set; }
+        public float LevelStartTime { get; private set; }
 
         public event System.Action<int> OnKillCountChanged;
 
@@ -23,6 +24,7 @@ namespace AlexsDoom.Level
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LevelStartTime = Time.time;
         }
 
         public void RegisterKill()
@@ -36,7 +38,14 @@ namespace AlexsDoom.Level
         public void RestartLevel()
         {
             EnemiesKilled = 0;
+            LevelStartTime = Time.time;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void BeginLevel()
+        {
+            EnemiesKilled = 0;
+            LevelStartTime = Time.time;
         }
 
         public void LoadMainMenu() => SceneManager.LoadScene(mainMenuScene);

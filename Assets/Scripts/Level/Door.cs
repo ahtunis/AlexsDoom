@@ -29,19 +29,19 @@ namespace AlexsDoom.Level
         private Transform _player;
         private AudioSource _audio;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _audio = GetComponent<AudioSource>();
             _closedPos = transform.position;
             _openPos = _closedPos + Vector3.up * openHeight;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             _player = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             HandleInput();
             Slide();
