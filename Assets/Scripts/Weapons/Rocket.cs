@@ -28,7 +28,7 @@ namespace AlexsDoom.Weapons
         {
             var rb = GetComponent<Rigidbody>();
             rb.useGravity = false;
-            rb.velocity = transform.forward * speed;
+            rb.linearVelocity = transform.forward * speed;
             Destroy(gameObject, lifetime);
         }
 

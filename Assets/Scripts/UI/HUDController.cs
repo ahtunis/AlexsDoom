@@ -20,7 +20,7 @@ namespace AlexsDoom.UI
 
         private void Start()
         {
-            _playerHealth = FindObjectOfType<PlayerHealth>();
+            _playerHealth = FindFirstObjectByType<PlayerHealth>();
             if (_playerHealth != null)
             {
                 _playerHealth.OnHealthChanged.AddListener(UpdateHealth);
