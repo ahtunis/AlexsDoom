@@ -57,7 +57,7 @@ namespace AlexsDoom.Enemies
 
         protected virtual void Die()
         {
-            // Override for death FX, drops, etc.
+            Level.GameManager.Instance?.RegisterKill();
             Destroy(gameObject);
         }
     }
