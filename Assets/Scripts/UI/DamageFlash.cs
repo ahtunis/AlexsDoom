@@ -28,7 +28,7 @@ namespace AlexsDoom.UI
 
         private void Start()
         {
-            var ph = FindFirstObjectByType<PlayerHealth>();
+            var ph = FindObjectOfType<PlayerHealth>();
             if (ph != null)
             {
                 _prevHealth = ph.CurrentHealth;

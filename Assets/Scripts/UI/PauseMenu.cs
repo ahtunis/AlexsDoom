@@ -19,7 +19,7 @@ namespace AlexsDoom.UI
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 // Don't allow pausing when the player is already dead
-                var pc = FindFirstObjectByType<PlayerController>();
+                var pc = FindObjectOfType<PlayerController>();
                 if (pc != null && !pc.enabled) return;
 
                 SetPaused(!_paused);
