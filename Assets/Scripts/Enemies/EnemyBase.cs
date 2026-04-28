@@ -16,7 +16,7 @@ namespace AlexsDoom.Enemies
         protected int CurrentHealth;
         protected NavMeshAgent Agent;
         protected Transform Player;
-        private float _nextAttackTime;
+        protected float NextAttackTime;
 
         protected virtual void Awake()
         {
@@ -34,9 +34,9 @@ namespace AlexsDoom.Enemies
             if (dist <= detectionRange)
                 Chase();
 
-            if (dist <= attackRange && Time.time >= _nextAttackTime)
+            if (dist <= attackRange && Time.time >= NextAttackTime)
             {
-                _nextAttackTime = Time.time + attackCooldown;
+                NextAttackTime = Time.time + attackCooldown;
                 Attack();
             }
         }
@@ -57,7 +57,7 @@ namespace AlexsDoom.Enemies
 
         protected virtual void Die()
         {
-            // Override for death FX, drops, etc.
+            Level.GameManager.Instance?.RegisterKill();
             Destroy(gameObject);
         }
     }

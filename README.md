@@ -4,7 +4,7 @@ A first-person shooter built in Unity (C#), inspired by the classic Doom series.
 
 ## Requirements
 
-- Unity 2022.3 LTS
+- Unity 6000.3.13f1
 - Universal Render Pipeline (URP)
 
 ## Project Structure
@@ -27,5 +27,5 @@ Assets/
 
 ## Getting Started
 
-1. Open the project in Unity 2022.3 LTS or later
+1. Open the project in Unity 6000.3.13f1
 2. Open `Assets/Scenes/Level01` to start playing

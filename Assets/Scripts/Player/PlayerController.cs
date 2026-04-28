@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using AlexsDoom.Level;
 
 namespace AlexsDoom.Player
 {
@@ -14,7 +14,7 @@ namespace AlexsDoom.Player
         [SerializeField] private float gravity = -20f;
 
         [Header("Look")]
-        [SerializeField] private float mouseSensitivity = 2f;
+        [SerializeField] private float mouseSensitivity = 2f; // overridden at runtime by GameSettings
         [SerializeField] private Transform cameraRoot;
 
         private CharacterController _cc;
@@ -25,6 +25,7 @@ namespace AlexsDoom.Player
         {
             _cc = GetComponent<CharacterController>();
             Cursor.lockState = CursorLockMode.Locked;
+            mouseSensitivity = GameSettings.MouseSensitivity;
         }
 
         private void Update()
