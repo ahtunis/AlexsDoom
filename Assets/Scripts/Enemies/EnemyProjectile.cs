@@ -18,7 +18,7 @@ namespace AlexsDoom.Enemies
         {
             var rb = GetComponent<Rigidbody>();
             rb.useGravity = false;
-            rb.linearVelocity = transform.forward * speed;
+            rb.velocity = transform.forward * speed;
             GetComponent<Collider>().isTrigger = true;
             Destroy(gameObject, lifetime);
         }
