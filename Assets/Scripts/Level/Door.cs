@@ -27,7 +27,7 @@ namespace AlexsDoom.Level
         private Vector3 _openPos;
         private float _closeTimer;
         private Transform _player;
-        private AudioSource _audio;
+        protected AudioSource _audio;
 
         protected virtual void Awake()
         {

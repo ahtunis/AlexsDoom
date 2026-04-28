@@ -24,7 +24,7 @@ namespace AlexsDoom.Weapons
 
         private void Update()
         {
-            if (Input.GetMouseButton(0))
+            if (UnityEngine.Input.GetMouseButton(0))
                 CurrentWeapon?.TryFire();
 
             HandleWeaponSwitch();

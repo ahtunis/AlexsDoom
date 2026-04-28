@@ -14,12 +14,10 @@ namespace AlexsDoom.Level
         [SerializeField] private AudioClip lockedSound;
 
         private bool _unlocked;
-        private AudioSource _audio;
 
         protected override void Awake()
         {
             base.Awake();
-            _audio = GetComponent<AudioSource>();
         }
 
         protected override void Update()
